@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "Autonumber series",
   "main": "./src/autoseries.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phangs/insomnia-plugin-autoseries.git"
+  },
   "scripts": {
     "test": "test"
   },
   "author": "Wilbert",
   "insomnia": {
     "name": "autoseries",
-    "description": "Autonumber series"
+    "description": "Autonumber series generator with prefix"
   },
   "license": "ISC",
   "dependencies": {}
