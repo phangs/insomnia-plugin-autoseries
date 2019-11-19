@@ -1,0 +1,16 @@
+{
+  "name": "autoseries",
+  "version": "1.0.0",
+  "description": "Autonumber series",
+  "main": "./src/autoseries.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Wilbert",
+  "insomnia": {
+    "name": "autoseries",
+    "description": "Autonumber series"
+  },
+  "license": "ISC",
+  "dependencies": {}
+}
