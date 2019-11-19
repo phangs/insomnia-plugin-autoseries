@@ -10,7 +10,7 @@
   "scripts": {
     "test": "test"
   },
-  "author": "Wilbert",
+  "author": "Wilbert Pineda",
   "insomnia": {
     "name": "autoseries",
     "description": "Autonumber series generator with prefix"
