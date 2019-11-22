@@ -16,11 +16,19 @@ module.exports.templateTags = [
             {
                 displayName: 'Starting',
                 description: 'Starting number',
-                placeholder: 0,
-                type: 'number'
+                placeholder: 1,
+                type: 'number',
+                default: '1'
+            },
+            {
+                displayName: 'Leading Zeros',
+                description: 'How many leading zeros to be added',
+                placeholder: 4,
+                type: 'number',
+                default: 4
             },
         ],
-        run(context,prefix,startnum) {
+        run(context,prefix,startnum, lzero) {
 
             var chk = localStorage.getItem('Insomnia::AutoSeries:Series');
 
@@ -28,16 +36,16 @@ module.exports.templateTags = [
                 setSeries(prefix, startnum);
                 var newSerPre = String(localStorage.getItem('Insomnia::AutoSeries:Prefix'));
                 var newSerNum = Number(localStorage.getItem('Insomnia::AutoSeries:Series'));
-                var curSeries = newSerPre + padSeries(newSerNum,6);
+                var curSeries = newSerPre + padSeries(newSerNum,lzero);
                 return curSeries;
             } else {
                 var newSerPre = String(localStorage.getItem('Insomnia::AutoSeries:Prefix'));
                 var newSerNum = Number(localStorage.getItem('Insomnia::AutoSeries:Series'));
-                var curSeries = newSerPre + padSeries(newSerNum,8);
+                var curSeries = newSerPre + padSeries(newSerNum,lzero);
                 var nser = newSerNum + 1;
                 localStorage.setItem('Insomnia::AutoSeries:Series', nser);
                 return curSeries;
-            }          
+            }
         }
     }
 ];
@@ -48,5 +56,5 @@ function setSeries(pre, stt) {
 }
 
 function padSeries(number, digits) {
-    return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+    return Array(Math.max((digits + 2) - String(number).length + 1, 0)).join(0) + number;
 }
