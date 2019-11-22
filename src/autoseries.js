@@ -21,8 +21,8 @@ module.exports.templateTags = [
                 default: '1'
             },
             {
-                displayName: 'Leading Zeros',
-                description: 'How many leading zeros to be added',
+                displayName: 'Leading Zeroes',
+                description: 'How many leading zeroes to be added',
                 placeholder: 4,
                 type: 'number',
                 default: 4
@@ -53,8 +53,8 @@ module.exports.templateTags = [
 function setSeries(pre, stt) {
     localStorage.setItem('Insomnia::AutoSeries:Prefix', pre);
     localStorage.setItem('Insomnia::AutoSeries:Series', stt);
-}
+};
 
 function padSeries(number, digits) {
     return Array(Math.max((digits + 2) - String(number).length + 1, 0)).join(0) + number;
-}
+};
